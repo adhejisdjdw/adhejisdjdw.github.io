@@ -31,12 +31,7 @@ position.addEventListener('mousemove', event => {
 		position.style.setProperty('--x', event.clientX + 'px');
 })
 
-$('.page-scroll').on('click', function(e) {
-	var tujuan = $(this).attr('href');
-	var elementTujuan = $(tujuan);
-	$('body').animate({
-		scrollTop: elementTujuan.offset().top - 50
-	}, 1000, 'linear');
-
+document.querySelector('.profile a').addEventListener('click', function(e) {
+	alert('PROFIL TENTANG GUA GX ADA KELANJUTANNYA, JADI CUMA SAMPE DISITU PROFIL MEMBOSANKAN DARI SAYA !!! TERIMA THANK YOU');
 	e.preventDefault();
 })
