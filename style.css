@@ -168,10 +168,11 @@ header .head {
     height: 500px;
     background-image: url(coba.png);
     background-size: cover;
-    filter: brightness(70%);
+    filter: brightness(60%);
     position: absolute;
     z-index: 1;
     opacity: .9;
+    background-position-y: 40px;
 }
 
 .head h1 {
@@ -540,14 +541,14 @@ header .head {
 
 .parallax .text {
     position: relative;
-    transform: skewY(345deg) translateY(-150px);
+    transform: skewY(345deg) translateY(-140px);
     animation: animateColor 5s linear infinite;
 }
 
 .parallax .text h2 {
     position: relative;
     width: 100%;
-    font-size: 15vh;
+    font-size: 12vh;
     color: #fff;
     pointer-events: none;
     line-height: 1em;
@@ -564,6 +565,20 @@ header .head {
 .parallax .text h2 span:nth-child(even) {
     color: transparent;
     -webkit-text-stroke: 2px #fff;
+}
+
+footer {
+    width: 100vw;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    border-top: 2px solid darkred;
+}
+
+footer p {
+    font-size: .8rem;
+    color: rgb(201, 201, 201);
+    background-color: rgb(0, 0, 1);
 }
 
 @keyframes animateColor {
@@ -650,7 +665,7 @@ header .head {
 
     header {
         width: 100vw;
-        height: 100vh;
+        height: 700px;
         background-color: rgba(0, 0, 0, 1);
     }
 
@@ -667,7 +682,6 @@ header .head {
     .head .foto {
         width: 400px;
         height: 500px;
-        background-position: center;
         align-self: center;
     }
 
@@ -868,6 +882,8 @@ header .head {
     .head .foto {
         width: 100%;
         height: 80vh;
+        opacity: .8;
+        background-position-x: -40px;
     }
 
     .head h1 {
@@ -887,11 +903,33 @@ header .head {
         max-width: 90%;
     }
 
+    .parallax .text h2 {
+        font-size: 8vh;
+    }
 }
 
 @media screen and (max-width: 360px) {
     .navbar .links {
         font-size: .6rem;
+    }
+
+    header .head {
+        height: 100%;
+        width: 260px;
+    }
+
+    .head .foto {
+        width: 100%;
+        height: 80vh;
+        background-position-x: -50px;
+    }
+
+    .head h1 {
+        left: 0;
+    }
+
+    .head span {
+        right: 0;
     }
 
     .aboutme {
@@ -915,4 +953,7 @@ header .head {
         text-stroke: 1px blue;
     }
 
+    .social-media h1 {
+        font-size: 1rem;
+    }
 }
