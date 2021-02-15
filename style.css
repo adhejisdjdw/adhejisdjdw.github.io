@@ -10,8 +10,6 @@ a {
 
 body {
     font-family: arial;
-    scroll-behavior: smooth;
-    overflow-y: scroll;
 }
 
 nav {
