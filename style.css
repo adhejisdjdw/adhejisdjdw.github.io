@@ -14,10 +14,6 @@ body {
     overflow-y: scroll;
 }
 
-.page-scroll {
-    background-color: green;
-}
-
 nav {
     position: fixed;
     left: 0;
