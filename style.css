@@ -35,21 +35,80 @@ nav {
     padding: 10px 0 10px 0px;
 }
 
-.navbar.sticky label {
+.navbar.sticky h1 {
     color: #000;
 }
 
-.navbar label {
+.navbar h1 {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    font-size: 1.2rem;
-    font-weight: 600;
-    /*background-color: blue;*/
-    flex: 1;
     color: #aaa;
     letter-spacing: 2px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    position: relative;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar label .mode {
+    appearance: none;
+    visibility: hidden;
+    display: none;
+}
+
+.navbar label .check {
+    position: relative;
+    display: block;
+    width: 40px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: #aaa;
+    cursor: pointer;
+    box-shadow: 0 0 0 1px rgba(26, 26, 26, 1);
+    overflow: hidden;
+    transition: ease-in .5s;
+    z-index: 9;
+}
+
+.navbar label .mode:checked~.check {
+    background-color: #000;
+    box-shadow: 0 0 0 1px rgba(255, 250, 250, 1);
+}
+
+.navbar label .check::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    bottom: 2px;
+    width: 16px;
+    height: 16px;
+    background-color: #000;
+    border-radius: 50%;
+    transition: .5s;
+}
+
+.navbar label .mode:checked~.check::before {
+    transform: translateX(-50px);
+}
+
+.navbar label .check::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    bottom: 2px;
+    width: 16px;
+    height: 16px;
+    background-color: #aaa;
+    border-radius: 50%;
+    transition: .5s;
+    transform: translateX(50px);
+}
+
+.navbar label .mode:checked~.check::after {
+    transform: translateX(0);
 }
 
 .navbar .links {
@@ -200,6 +259,11 @@ header .head {
     text-indent: -20px;
 }
 
+.aboutme.dark {
+    filter: invert(100%);
+    background-color: #fff;
+}
+
 .aboutme {
     width: 100vw;
     height: 100vh;
@@ -210,6 +274,7 @@ header .head {
     align-items: center;
     position: relative;
     border-bottom: 3px solid cyan;
+    transition: .5s ease-in;
 }
 
 .aboutme .tab-content.active {
@@ -280,7 +345,9 @@ header .head {
     height: 550px;
     position: absolute;
     left: 7%;
+    filter: inherit;
 }
+
 
 .profile {
     display: none;
@@ -443,7 +510,7 @@ header .head {
 }
 
 .social-media li:nth-child(4) a:hover {
-    color: white;
+    color: rgb(118, 0, 141);
 }
 
 .social-media li:last-child {
@@ -808,7 +875,7 @@ footer p {
 @media screen and (max-width: 576px) {
 
     .navbar {
-        justify-content: center;
+        justify-content: space-between;
         padding: 40px 0 50px 0px;
     }
 
@@ -816,15 +883,16 @@ footer p {
         padding: 10px 0 10px 0px;
     }
 
-    .navbar label {
+    .navbar h1 {
         display: flex;
         align-items: center;
         justify-content: center;
         height: 100%;
         font-size: 1.2rem;
         font-weight: 600;
-        /*background-color: blue;*/
-        flex: 1;
+        /* background-color: blue; */
+        flex: 0;
+        margin-left: 20px;
     }
 
     .navbar .links {
@@ -840,11 +908,12 @@ footer p {
         justify-content: space-evenly;
         position: absolute;
         border-radius: 7px;
-        /*border: 2px solid darkblue;*/
-        display: none;
-        animation: fadeInSide .5s ease;
+        border: 2px solid darkblue;
         margin-top: 30px;
-        transition: .4s ease-out;
+        left: 5%;
+        transition: .3s ease-in-out;
+        visibility: hidden;
+        opacity: 0;
     }
 
     .navbar.sticky .links {
@@ -852,8 +921,8 @@ footer p {
     }
 
     .navbar .links.show {
-        display: flex;
-        animation: kidFadeInTop .5s ease;
+        visibility: visible;
+        opacity: 1;
     }
 
     .navbar .links li a {

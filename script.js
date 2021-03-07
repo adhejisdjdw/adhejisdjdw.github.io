@@ -35,3 +35,7 @@ document.querySelector('.profile a').addEventListener('click', function(e) {
 	alert('PROFIL TENTANG GUA GX ADA KELANJUTANNYA, JADI CUMA SAMPE DISITU PROFIL MEMBOSANKAN DARI SAYA !!! TERIMA THANK YOU');
 	e.preventDefault();
 })
+
+document.querySelector('.mode').addEventListener('click', function() {
+	document.querySelector('.aboutme').classList.toggle('dark');
+})
