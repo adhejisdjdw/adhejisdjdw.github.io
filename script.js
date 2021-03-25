@@ -38,4 +38,5 @@ document.querySelector('.profile a').addEventListener('click', function(e) {
 
 document.querySelector('.mode').addEventListener('click', function() {
 	document.querySelector('.aboutme').classList.toggle('dark');
+	document.querySelector('.services-section').classList.toggle('dark');
 })

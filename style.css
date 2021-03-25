@@ -43,12 +43,13 @@ nav {
     display: flex;
     color: #aaa;
     letter-spacing: 2px;
-    font-size: 1.2rem;
+    font-size: 2rem;
     font-weight: 600;
     position: relative;
     flex: 1;
     justify-content: center;
     align-items: center;
+    font-family: "high jersey";
 }
 
 .navbar label .mode {
@@ -300,7 +301,7 @@ header .head {
 }
 
 .bout span:first-child {
-    color: #c6c6c6;
+    color: transparent;
     -webkit-text-stroke: 1.2px blue;
     text-stroke: 1.2px blue;
     margin-left: 5px;
@@ -341,8 +342,8 @@ header .head {
 }
 
 .stand {
-    width: 400px;
-    height: 550px;
+    width: 330px;
+    height: 440px;
     position: absolute;
     left: 7%;
     filter: inherit;
@@ -373,15 +374,14 @@ header .head {
     width: 100px;
     margin-top: 30px;
     padding: 10px;
-    box-shadow: 0 0 2px 2px black;
-    border-top-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+    border: 1.8px solid black;
     color: black;
     text-align: center;
+    font-size: .8rem;
 }
 
 .profile a:hover {
-    background-color: rgba(0, 0, 0, .4);
+    background-color: black;
     color: white;
 }
 
@@ -634,6 +634,97 @@ header .head {
     -webkit-text-stroke: 2px #fff;
 }
 
+.services-section {
+    background-color: #c6c6c6;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    transition: .5s ease-in;
+    border-top: 4px solid #d5b900;
+    padding: 100px 0;
+}
+
+.services-section.dark {
+    filter: invert(100%);
+    background-color: #fff;
+}
+
+.inner-width {
+    width: 100%;
+    height: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+    overflow: hidden;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.inner-width h1 {
+    display: flex;
+    font-size: 2.5rem;
+    color: #c4ab00;
+}
+
+.inner-width h1 p {
+    margin-left: 5px;
+    -webkit-text-stroke: 1.2px blue;
+    text-stroke: 1.2px blue;
+    color: transparent;
+}
+
+.services-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-self: center;
+}
+
+.service-box {
+    max-width: 33.33%;
+    padding: 10px;
+    text-align: center;
+    color: black;
+    cursor: pointer;
+}
+
+.service-icon {
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    border: 3px solid royalblue;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    color: royalblue;
+    transform: rotate(45deg);
+    margin-bottom: 30px;
+    margin-top: 16px;
+    transition: 0.1s linear;
+}
+
+.service-icon i {
+    line-height: 70px;
+    transform: rotate(-45deg);
+    font-size: 26px;
+}
+
+.service-box:hover .service-icon {
+    background: royalblue;
+    color: #ddd;
+}
+
+.service-title {
+    font-size: 18px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.service-desc {
+    font-size: 14px;
+}
+
 footer {
     width: 100vw;
     height: 50px;
@@ -707,6 +798,12 @@ footer p {
     }
 }
 
+@media screen and (max-width:960px) {
+    .service-box {
+        max-width: 45%;
+    }
+}
+
 @media screen and (max-width: 950px) {
     .stand {
         display: none;
@@ -717,6 +814,9 @@ footer p {
         margin-right: 50px;
     }
 }
+
+
+
 
 @media screen and (max-width: 900px) {
     .menu-content {
@@ -870,6 +970,11 @@ footer p {
         font-size: 10vh;
     }
 
+    .inner-width h1 {
+        font-size: 2rem;
+        margin-bottom: 50px;
+    }
+
 }
 
 @media screen and (max-width: 576px) {
@@ -974,6 +1079,35 @@ footer p {
 
     .parallax .text h2 {
         font-size: 8vh;
+    }
+
+    .services-section {
+        background-color: #c6c6c6;
+        width: 100vw;
+        height: auto;
+    }
+
+    .inner-width {
+        width: 100%;
+        height: auto;
+        padding: 50px 20px;
+    }
+
+    .inner-width h1 p {
+        margin-left: 5px;
+        -webkit-text-stroke: 1px blue;
+        text-stroke: 1px blue;
+        color: transparent;
+    }
+
+    .service-box {
+        max-width: 50%;
+    }
+}
+
+@media screen and (max-width:480px) {
+    .service-box {
+        max-width: 100%;
     }
 }
 
